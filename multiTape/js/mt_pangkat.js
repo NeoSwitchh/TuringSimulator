@@ -2,6 +2,12 @@ var getDomVal = document.getElementById('val1');
 var turingVal = [];
 var turingVal2 = [];
 var turingVal3 = [];
+var i;
+var j;
+var k;
+var l;
+var result=0;
+var nowState = 0;
 var activeState = document.getElementsByClassName('state-active');
 var trTape = document.getElementById('turing_tape');
 var trTape2 = document.getElementById('turing_tape2');
@@ -10,12 +16,6 @@ var dispState = document.getElementById('show-state-now');
 var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
-var i;
-var j;
-var k;
-var l;
-var result=0;
-var nowState = 0;
 
 function init(){
     trDelete();
@@ -212,6 +212,7 @@ function go(nowState,oldVal,oldVal2,oldVal3,nextState,newVal,newVal2,newVal3,dir
     }
 }
 function decide(dt1,dt2,dt3){
+    //mungkin ganti switch case
     if(dt1 =='R'){
         j++;
     }else if(dt1 == 'L'){

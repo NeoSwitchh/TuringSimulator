@@ -1,8 +1,13 @@
 var nval1 = document.getElementById('val1');
-// var nval2 = document.getElementById('val').value;
 var turingVal = [];
 var turingVal2 = [];
 var turingVal3 = [];
+var i;
+var j;
+var k;
+var l;
+var result=0;
+var nowState = 0;
 var activeState = document.getElementsByClassName('state-active');
 var trTape = document.getElementById('turing_tape');
 var trTape2 = document.getElementById('turing_tape2');
@@ -11,12 +16,6 @@ var dispState = document.getElementById('show-state-now');
 var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
-var i;
-var j;
-var k;
-var l;
-var result=0;
-var nowState = 0;
 
 function init(){
     trDelete();
@@ -26,7 +25,6 @@ function init(){
     turingVal.push(new createState("B"));
     turingVal2.push(new createState2("B"));
     turingVal3.push(new createState3("B"));
-    // turingVal.push(new createState("B"));
     }
     for(i = 0; i < nval1.value; i++){
         turingVal.push(new createState("0"));
@@ -37,7 +35,6 @@ function init(){
         turingVal.push(new createState("B"));
         turingVal2.push(new createState2("B"));
         turingVal3.push(new createState3("B"));
-        // turingVal.push(new createState("B"));
     }
     trTape.childNodes[1].classList.add("state-active");
     trTape2.childNodes[1].classList.add("state-active");
@@ -187,6 +184,7 @@ function go(nowState,oldVal,oldVal2,oldVal3,nextState,newVal,newVal2,newVal3,dir
     }
 }
 function decide(dt1,dt2,dt3){
+    //mungkin ganti switch case
     if(dt1 =='R'){
         j++;
     }else if(dt1 == 'L'){

@@ -1,16 +1,15 @@
 var getDomVal = document.getElementById('val1');
-// var nval2 = document.getElementById('val').value;
 var turingVal = [];
+var i;
+var j;
+var result=0;
+var nowState = 0;
 var activeState = document.getElementsByClassName('state-active');
 var trTape = document.getElementById('turing_tape');
 var dispState = document.getElementById('show-state-now');
 var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
-var i;
-var j;
-var result=0;
-var nowState = 0;
 
 function init(){
     trDelete();
