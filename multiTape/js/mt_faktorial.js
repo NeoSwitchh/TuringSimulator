@@ -17,6 +17,7 @@ var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
 
+//sama kaya mtr tapi 3 tape
 function init(){
     trDelete();
 
