@@ -11,12 +11,12 @@ var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
 
-//INPUT EXAMPLE; 1+1, 2+2, 5+3
+//INPUT EXAMPLE; 1-1, 2-2, 5-3
 
 function init(){
     trDelete();
     var nval = getDomVal.value;
-    var nvalArr = nval.split("+");
+    var nvalArr = nval.split("C");
     var nval1 = parseInt(nvalArr[0]);
     var nval2 = parseInt(nvalArr[1]);
     console.log(nval2);
@@ -30,10 +30,10 @@ function init(){
         if (nval2 < 0){
             newNval2 = nval2 * -1;
         }
-        if (nval1 >= 0){
+        if (nval1 > 0 || nval1 == 0){
             newNval1 = nval1;
         }
-        if (nval2 >= 0){
+        if (nval2 > 0 || nval2 == 0){
             newNval2 = nval2;
         }
         for(i = 0; i < newNval1; i++){
@@ -121,20 +121,23 @@ function step(){
         //ONTHEGO FIX NODE CODE = 88X
         go(11, 'B', 881, 'B','L',0);
         go(881, '0', 881, '0','L',0);
-        go(881, 'C', 881, 'C','L',0);
-        go(881, 'B', 11, 'B','R',0);
+        go(881, 'C', 886, 'C','L',0);
+
+        go(886, 'B', 11, 'B','R',0);
     go(11, '0', 15, 'X','R',0);
     go(15, '0', 15, '0','R',0);
     go(15, 'C', 20, 'C','R',0);
     go(20, '0', 20, '0','R',0);
-    go(20, 'B', 24, '0','L',1);
+    go(20, 'B', 772, 'B','L',1);
+        //PATCH NODE CODE = 77X
+        go(772, '0', 24, 'B','L',0);
     go(24, '0', 24, '0','L',0);
     go(24, 'C', 25, 'C','L',0);
     go(25, '0', 25, '0','L',0);
         //ONTHEGO FIX NODE CODE = 88X
         go(25, 'X', 882, 'X','R',0);
         go(882, 'C', 69, 'B','R',0);
-        go(882, '0', 11, 'X','R',0);
+        go(882, '0', 11, '0','R',0);
     go(69, '0', 69, '1','R',0);
     go(69, 'B', 420, 'B','L',0);
 
@@ -148,7 +151,12 @@ function step(){
     go(16, '0', 16, '0','R',0);
     go(16, 'C', 21, 'C','R',0);
     go(21, '0', 21, '0','R',0);
-    go(21, 'B', 26, '0','L',1);
+    go(21, 'B', 771, 'B','L',0);
+    go(21, '1', 21, '1','R',0);
+        //PATCH NODE CODE = 77X
+        go(771, '0', 26, 'B','L',0);
+        go(771, 'C', 771, 'C','R',0);
+        go(771, 'B', 26, '1','L',0); 
     go(26, '0', 26, '0','L',0);
     go(26, 'C', 27, 'C','L',0);
     go(27, '0', 27, '0','L',0);
@@ -173,12 +181,12 @@ function step(){
     go(28, '1', 28, '1','R',0);
     go(28, 'C', 29, 'C','R',0);
     go(29, '0', 29, '0','R',0);
-    go(29, 'B', 30, 'B','L',0);
-    go(30, 'C', 32, 'C','R',0);
-    go(32, '1', 32, '1','R',0);
-    go(32, 'B', 31, '1','L',0);
-    go(30, '0', 31, 'B','L',0);
-    go(31, '0', 31, '0','L',0);
+    go(29, 'B', 30, '0','L',0);
+    // go(30, 'C', 32, 'C','R',0);
+    // go(32, '1', 32, '1','R',0);
+    // go(32, 'B', 31, '1','L',0);
+    // go(30, '0', 31, 'B','L',0);
+    // go(31, '0', 31, '0','L',0);
     go(31, '1', 31, '1','L',0);
     go(31, 'C', 31, 'C','L',0);
     go(31, 'X', 22, 'X','R',0);
