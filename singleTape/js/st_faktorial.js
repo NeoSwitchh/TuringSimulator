@@ -11,25 +11,28 @@ var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
 
+//misal inputnya 5, bakal generate tape ex. BB00000BB
 function init(){
     trDelete();
-
+    //generate BB
     if(nval1.value > 0){
     turingVal.push(new createState("B"));
     turingVal.push(new createState("B"));
+    //generate 0^nval1 sesuai dengan value dari nval1 / input
     for(i = 0; i < nval1.value; i++){
         turingVal.push(new createState("0"));
     }
+    //generate BB
     turingVal.push(new createState("B"));
     turingVal.push(new createState("B"));
-    trTape.childNodes[1].classList.add("state-active");
+    trTape.childNodes[1].classList.add("state-active"); //set index 1 di tape aktif
     }else{
         alert('Nilai belum dimasukan/negatif');
     }
     j=2;
     state=0;
 }
-
+//buat generate per blok state
 function createState(val){
     this.val = val;
     var item = document.createElement("p");

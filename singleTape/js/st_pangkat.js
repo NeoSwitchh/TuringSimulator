@@ -10,11 +10,11 @@ var dispState = document.getElementById('show-state-now');
 var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
-
+//input 2^5, generate BB00000100BB
 function init(){
     trDelete();
     var nval = getDomVal.value;
-    var nvalArr = nval.split("^");
+    var nvalArr = nval.split("^");      //split input jadi array
     var nval1 = parseInt(nvalArr[0]);
     var nval2 = parseInt(nvalArr[1]);
     // console.log(nvalArr);

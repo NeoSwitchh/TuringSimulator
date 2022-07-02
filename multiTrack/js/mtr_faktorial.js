@@ -13,14 +13,19 @@ var dispAnswer = document.getElementById('show-answer');
 var stepController = document.getElementById('controller_step');
 var initController = document.getElementById('init_step');
 
+/*
+generate 2 tape ex.
+tape1 BB000BB
+tape2 BBBBBBB
+*/
+//sama kaya st cuman ditambahin lagi tapenya
 function init(){
     trDelete();
 
     if(nval1.value > 0){
     for(i = 0; i < 2; i++){
-    turingVal.push(new createState("B"));
-    turingVal2.push(new createState2("B"));
-    // turingVal.push(new createState("B"));
+    turingVal.push(new createState("B"));               ////turingVal1 buat nampung array tape 1, createState1 buat generate element di tape 1
+    turingVal2.push(new createState2("B"));             //turingVal2 buat nampung array tape 2, createState2 buat generate element di tape 2
     }
     for(i = 0; i < nval1.value; i++){
         turingVal.push(new createState("0"));
@@ -31,8 +36,8 @@ function init(){
         turingVal2.push(new createState2("B"));
         // turingVal.push(new createState("B"));
     }
-    trTape.childNodes[1].classList.add("state-active");
-    trTape2.childNodes[1].classList.add("state-active");
+    trTape.childNodes[1].classList.add("state-active"); //set index ditape 1 aktif
+    trTape2.childNodes[1].classList.add("state-active"); //set index ditape 2 aktif
     }else{
         alert('Nilai belum dimasukan/negatif');
     }
