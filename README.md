@@ -1,2 +1,2 @@
 # TuringSimulator
-TBA Group Project
+Web-based client-side Turing machine simulator.
